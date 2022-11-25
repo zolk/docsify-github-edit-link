@@ -7,11 +7,13 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-window.$docsify.plugins.push((hook, vm) => {
+function githubEditLink(hook, vm) {
   const options = {
+    title: "Edit on Github",
     docsDir: "/docs",
     branch: "main",
-    url: "",
+    repo: "",
+    newWindow: true,
   };
 
   hook.init(function () {
@@ -19,7 +21,7 @@ window.$docsify.plugins.push((hook, vm) => {
       Object.keys(options).forEach((key) => {
         const override = vm.config.githubEditLink[key];
 
-        if (typeof override === "string") {
+        if (typeof override === "string" || typeof override === "boolean") {
           options[key] = override;
         }
       });
@@ -29,21 +31,28 @@ window.$docsify.plugins.push((hook, vm) => {
   });
 
   hook.afterEach(function (html, next) {
-    const github = options.url;
-    const branch = options.branch;
-    const docsDir = options.docsDir;
-    const page = vm.route.file;
+    const { title, docsDir, branch, repo, newWindow } = options;
+    const page = vm.route.file.replace(/^\//, "");
 
-    if (!github) {
+    if (!repo) {
       next(html);
       return;
     }
 
-    const url = `${github}/edit/${branch}${docsDir}${page}`;
-    const editLink = `<a href="${url}" class="edit-on-github" rel="noopener" target="_blank">Edit on GitHub</a>`;
+    const url = `${repo}/edit/${branch}${docsDir}/${page}`;
+    const target = `${newWindow ? 'target="_blank"' : ""}`;
+    const editLink = `<a href="${url}" class="edit-on-github" rel="noopener" ${target}>${title}</a>`;
 
     html = html + editLink;
 
     next(html);
   });
-});
+}
+
+if (window) {
+  // Init plugin
+  window.$docsify.plugins = [].concat(
+    window.$docsify.plugins || [],
+    githubEditLink
+  );
+}
