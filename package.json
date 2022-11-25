@@ -1,0 +1,33 @@
+{
+  "name": "docsify-github-edit-link",
+  "version": "1.0.0",
+  "description": "A Docsify plugin for adding an \"Edit on Github\" link to pages.",
+  "main": "src/github-edit-link.js",
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zolk/docsify-github-edit-link.git"
+  },
+  "author": "Kevin Zolkiewicz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zolk/docsify-github-edit-link/issues"
+  },
+  "homepage": "https://github.com/zolk/docsify-github-edit-link#readme",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.4",
+    "prettier": "^2.8.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
+  }
+}
