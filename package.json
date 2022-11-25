@@ -8,7 +8,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zolk/docsify-github-edit-link.git"
+    "url": "https://github.com/zolk/docsify-github-edit-link.git"
   },
   "author": "Kevin Zolkiewicz",
   "license": "MIT",
