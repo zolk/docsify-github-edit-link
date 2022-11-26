@@ -2,9 +2,9 @@
   "name": "docsify-github-edit-link",
   "version": "1.0.0",
   "description": "A Docsify plugin for adding an \"Edit on Github\" link to pages.",
-  "main": "src/github-edit-link.js",
+  "main": "dist/github-edit-link.js",
   "files": [
-    "src"
+    "dist"
   ],
   "repository": {
     "type": "git",
