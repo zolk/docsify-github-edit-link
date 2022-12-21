@@ -86,7 +86,7 @@ By default, the server will boot at http://localhost:3000.
 ## License
 
 This project was created by [Kevin Zolkiewicz](http://zolk.com) and is licensed
-under an [MIT License](./LICENSE.md).
+under an [MIT License](./LICENSE).
 
 <br><br><br>
 
