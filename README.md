@@ -9,6 +9,7 @@ A Docsify plugin for adding an "Edit on Github" link to pages.
 ```html
 <script>
   window.$docsify = {
+    // ... (your existing Docsify config)
     githubEditLink: {
       repo: "https://github.com/zolk/docsify-github-edit-link",
     },
@@ -56,7 +57,7 @@ Specifies if the link should open in a new window.
 
 ## Live Example
 
-You can see this plugin in use as part of DS Starter Kit ([Live Example](https://ds-starter-kit.vercel.app), [GitHub project](https://github.com/zolk/ds-starter-kit)).
+You can see this plugin in use as part of **DS Starter Kit** ([Live example](https://ds-starter-kit.vercel.app), [GitHub project](https://github.com/zolk/ds-starter-kit)).
 
 ## Local Demo
 
