@@ -57,7 +57,7 @@ Specifies if the link should open in a new window.
 
 ## Live Example
 
-You can see this plugin in use as part of **DS Starter Kit** ([Live example](https://ds-starter-kit.vercel.app), [GitHub project](https://github.com/zolk/ds-starter-kit)).
+You can see this plugin in use as part of **Docsify Breeze** ([Live example](https://docsify-breeze.vercel.app), [GitHub project](https://github.com/zolk/docsify-breeze)).
 
 ## Local Demo
 
